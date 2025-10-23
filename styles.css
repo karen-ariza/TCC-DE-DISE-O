@@ -1,0 +1,183 @@
+/* ==== ESTILO GENERAL ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* ==== ENCABEZADO FIJO ==== */
+header {
+  position: fixed; /* Barra fija al desplazarse */
+  top: 0;
+  width: 100%;
+  background-color: #013220; /* Verde oscuro */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+.logo-titulo {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+  margin-right: 10px;
+  margin-bottom: 8px; /* ← separa el logo de la barra amarilla */
+}
+
+h1 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  margin: 0;
+  font-style: italic;
+  font-size: 2em;
+  font-family: "Georgia", cursive;
+}
+
+/* ==== MENÚ DE NAVEGACIÓN ==== */
+nav {
+  background-color: #f2c700; /* Amarillo */
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+}
+
+nav ul li a:hover {
+  background-color: #e6b800;
+  border-radius: 5px;
+}
+
+/* ==== MENÚ HAMBURGUESA ==== */
+.menu-toggle {
+  display: none;
+  font-size: 2em;
+  cursor: pointer;
+  color: white;
+}
+
+/* ==== SECCIÓN PRINCIPAL ==== */
+.hero {
+  position: relative;
+  height: 100vh;
+  margin-top: 120px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#video-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(60%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  max-width: 80%;
+  font-style: italic;
+}
+
+.hero-content h2 {
+  font-size: 3.8em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-family: "Georgia", cursive;
+}
+
+.hero-content p {
+  margin: 10px 0 30px;
+  font-size: 2.5em;
+  line-height: 1.4;
+  font-family: "Georgia", cursive;
+}
+
+button {
+  background-color: #f2c700;
+  border: none;
+  padding: 20px 45px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #e6b800;
+  transform: scale(1.05);
+}
+
+/* ==== PIE DE PÁGINA ==== */
+footer {
+  background-color: #013220;
+  color: #f2c700;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1.3em;
+  font-family: 'Times New Roman', cursive;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+  /* Muestra el botón hamburguesa */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Oculta el menú por defecto */
+  nav {
+    display: none;
+    width: 100%;
+  }
+
+  /* Muestra el menú al hacer clic */
+  nav.active {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+}   
