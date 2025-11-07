@@ -1,93 +1,145 @@
-/* ==== ESTILO GENERAL ==== */
-* {
+/* ESTILO GENERAL */
+*{
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
 }
 
-/* ==== ENCABEZADO FIJO ==== */
-header {
-  position: fixed; /* Barra fija al desplazarse */
-  top: 0;
+body{
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.header{
+  background-color: #f2c700;
+  height: 80px;
+  position: fixed;
   width: 100%;
-  background-color: #013220; /* Verde oscuro */
-  color: white;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+section {
+  margin-bottom: 0px; /* espacio inferior entre secciones */
+}
+
+.nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 30px;
-  z-index: 1000;
-  flex-wrap: wrap;
-}
-
-.logo-titulo {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  width: 60px;
-  height: auto;
-  margin-right: 10px;
-  margin-bottom: 8px; /* ← separa el logo de la barra amarilla */
-}
-
-h1 {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-  margin: 0;
-  font-style: italic;
-  font-size: 2em;
-  font-family: "Georgia", cursive;
-}
-
-/* ==== MENÚ DE NAVEGACIÓN ==== */
-nav {
-  background-color: #f2c700; /* Amarillo */
   width: 100%;
-  text-align: center;
-  display: flex;
-  justify-content: center;
+  padding: 0 15px;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-nav ul li {
-  margin: 0 15px;
-}
-
-nav ul li a {
+.nav-link{
   color: black;
-  font-weight: bold;
   text-decoration: none;
-  padding: 10px;
-  display: inline-block;
 }
 
-nav ul li a:hover {
-  background-color: #e6b800;
+.nav-link a{
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.logo{
+  font-size: 30px;
+  font-weight: bold;
+  padding: 0 40px;
+  line-height: 80px;
+}
+
+.logo-img{
+  width: 40px;
+  height: 50px;
+  vertical-align: middle;
+  margin-top: -4px; /* Ajusta este valor según necesites */
+}
+
+.nav-menu{
+  display: flex;
+  margin-right: 40px;
+  list-style: none;
+}
+
+.nav-menu-item{
+  font-size: 18px;
+  margin: 0 10px;
+  line-height: 80px;
+  text-transform: uppercase;
+  width: max-content;
+}
+
+.nav-menu-link{
+  padding: 8px 12px;
   border-radius: 5px;
 }
 
-/* ==== MENÚ HAMBURGUESA ==== */
-.menu-toggle {
-  display: none;
-  font-size: 2em;
-  cursor: pointer;
+.nav-menu-link:hover{
+  background-color: #013220;
   color: white;
+  transition: 0.5s;
 }
 
-/* ==== SECCIÓN PRINCIPAL ==== */
+.nav-menu-toggle{
+  color: black;
+  background: none;
+  border: none;
+  font-size: 30px;
+  padding: 0 20px;
+  line-height: 60px;
+  cursor: pointer;
+  display: none;
+}
+
+.submenu{
+  display: none;
+  position: absolute;
+  background-color: #f2c700;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.submenu li{
+  padding: 8px 20px;
+}
+
+.submenu li a{
+  color: black;
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+  padding: 4px 10px;
+  line-height: 1.2;
+}
+
+.submenu li a:hover {
+  background-color: #013220;
+  color: white;
+  transition: 0.3s;
+}
+
+/* Mostrar el submenú al pasar el ratón */
+.nav-menu-item:hover .submenu {
+  display: block;
+}
+
+/* Asegura que el li padre tenga posición relativa */
+.nav-menu-item {
+  position: relative;
+}
+
+/*seccion hero con video*/
 .hero {
   position: relative;
   height: 100vh;
-  margin-top: 120px;
+  margin-top: 80px;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -113,7 +165,7 @@ nav ul li a:hover {
   text-align: center;
   max-width: 80%;
   font-style: italic;
-  margin-top: 200px;
+  margin-top: 180px;
 }
 
 .hero-content h2 {
@@ -124,66 +176,179 @@ nav ul li a:hover {
 }
 
 .hero-content p {
-  margin: 10px 0 30px;
+  margin: 10px 0 400px;
   font-size: 2.5em;
   line-height: 1.4;
   font-family: "Georgia", cursive;
 }
 
-.hero-content p.fundado{
-  margin-top: 400px; 
-  font-size: 2.2em;
-}
-
-button {
-  background-color: #f2c700;
-  border: none;
-  padding: 20px 45px;
-  font-size: 1.1em;
-  font-weight: bold;
+/* ===== FLECHA ANIMADA ===== */
+.flecha{
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+  width: 35px;
+  height: 35px;
+  border-left: 4px solid rgb(0, 0, 0);
+  border-bottom: 4px solid rgb(0, 0, 0);
+  animation: bounce 1.5s infinite;
   cursor: pointer;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: border-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #e6b800;
-  transform: scale(1.05);
+.flecha:hover {
+  border-color: #f2c700;
 }
 
-/* ==== PIE DE PÁGINA ==== */
-footer {
-  background-color: #013220;
-  color: #f2c700;
+/*seccion esencia*/
+
+.esencia {
+  padding: 100px 10%;
+  background-color: #fff;
+  color: #222;
   text-align: center;
-  padding: 20px 0;
-  font-size: 1.3em;
-  font-family: 'Times New Roman', cursive;
 }
 
-/* ==== RESPONSIVE ==== */
-@media (max-width: 768px) {
-  /* Muestra el botón hamburguesa */
-  .menu-toggle {
-    display: block;
+.esencia-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.esencia-texto h2 {
+  font-size: 2.2em;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.esencia-texto p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 50px;
+}
+
+.esencia-contenido {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* antes: flex-start — centramos verticalmente */
+  flex-wrap: wrap;
+  gap: 80px;
+}
+
+.esencia-contenido img {
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.esencia-texto-2 {
+  max-width: 450px;
+  text-align: justify;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.esencia-texto-2 p {
+  font-size: 1em;
+  line-height: 1.3;
+  margin-bottom: 25px;
+  width: 100%;
+  text-align: justify;
+}
+
+.btn-historia {
+  background-color: #e41b17;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  display: inline-block;
+  transition: 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn-historia:hover {
+  background-color: #b71511;
+}
+
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0) rotate(-45deg);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-15px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 820px) {
+  body {
+    padding-top: 0;
   }
 
-  /* Oculta el menú por defecto */
-  nav {
+  .header {
+    height: 60px;
+  }
+
+  .hero{
+    margin-top: 60px;
+  }
+
+  .hero-content{
+    margin-top: 120px;
+  }
+
+  .hero-content p{
+    margin: 10px 0 150px;
+  }
+
+  .logo {
+    font-size: 25px;
+    padding: 0 20px;
+    line-height: 60px;
+  }
+
+  /* Por defecto, el menú está oculto */
+  .nav-menu {
     display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    background-color: rgb(255, 181, 172);
+    position: fixed;
+    left: 0;
+    top: 60px;
     width: 100%;
+    padding: 20px 0;
+    /*scroll*/
+    height: calc(100% - 60px);
+    overflow-y: auto;
   }
 
-  /* Muestra el menú al hacer clic */
-  nav.active {
+  .nav-menu-item{
+   line-height: 70px; 
+  }
+
+  /*estilo en las letras cuando cambia el celular */  
+  .nav-menu-link:hover{
+    background: none;
+    color: rgb(238, 10, 10);
+  }
+
+  /* Cuando el JS activa la clase .active, el menú se muestra */
+  .nav-menu.active {
+    display: flex;
+  }
+
+  /*Mostrar el botón hamburguesa solo en móvil */
+  .nav-menu-toggle {
     display: block;
   }
 
-  nav ul {
-    flex-direction: column;
+  .flecha{
+    bottom: 15px;
   }
-
-  nav ul li {
-    margin: 10px 0;
-  }
-}   
+}

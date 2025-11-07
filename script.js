@@ -1,10 +1,18 @@
-// ==== SCRIPT PARA EL MENÚ HAMBURGUESA ====
+// Activar íconos de Lucide
+lucide.createIcons();
 
-// Seleccionamos el ícono del menú y el contenedor del menú de navegación
-const toggle = document.getElementById('menu-toggle');
-const menu = document.getElementById('nav-menu');
+// Seleccionar elementos
+const toggle = document.querySelector('.nav-menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+const icon = toggle.querySelector('i');
 
-// Cuando el usuario hace clic en el ícono (☰), se alterna la clase "active"
+// Evento de clic para abrir/cerrar menú
 toggle.addEventListener('click', () => {
-  menu.classList.toggle('active');
+  navMenu.classList.toggle('active');
+  toggle.classList.toggle('rotate');
+
+  // Cambiar ícono de "menu" a "x"
+  const isOpen = navMenu.classList.contains('active');
+  icon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+  lucide.createIcons(); // actualizar el ícono
 });

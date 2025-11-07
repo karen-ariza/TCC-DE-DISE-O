@@ -3,31 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>San Sebastián de Buenavista</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>San Sebastian de Buenavista</title>
+  <link rel="stylesheet" href="styles.css ">
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- ENCABEZADO SUPERIOR -->
-  <header>
-    <div class="logo-titulo">
-      <!-- Logo del municipio -->
-      <img src="imagnes/Escudo.png" alt="Escudo" class="logo">
-      <h1>San Sebastián de Buenavista</h1>
-    </div>
+  <header class="header">
+    <nav class="nav">
+      <a href="#" class="logo nav-link">
+        <img src="imagnes/Escudo.png" alt="Escudo" class="logo-img">
+        San sebastian
+      </a>
+      <button class="nav-menu-toggle" aria-label="Abrir menú">
+        <i data-lucide="menu"></i>
+      </button>
+      <ul class="nav-menu">
+        <li class="nav-menu-item nav-link"><a href="#" class="nav-menu-link">Inicio</a></li>
+        <li class="nav-menu-item nav-link"><a href="#" class="nav-menu-link">Historia</a></li>
+        <li class="nav-menu-item nav-link"><a href="#" class="nav-menu-link">Cultura</a></li>
 
-    <!-- Botón del menú hamburguesa -->
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        <!--TURISMO con SUBMENÚ -->
+        <li class="nav-menu-item nav-link">
+          <a href="#" class="nav-menu-link">Turismo ▾</a>
+          <ul class="submenu">
+            <li><a href="#">Lugares emblematicos</a></li>
+            <li><a href="#">Hoteles</a></li>
+            <li><a href="#">Gastronomia</a></li>
+            <li><a href="#">Artesanias</a></li>
+            <li><a href="#">Festividades</a></li>
+          </ul>
 
-    <!-- Barra de navegación -->
-    <nav id="nav-menu">
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="Cultura.html">Cultura</a></li>
-        <li><a href="turismo.html">Turismo</a></li>
-        <li><a href="economia.html">Economia</a></li>
-        <li><a href="simbolos.html">simbolos</a></li>
-        <!--<li><a href="#">Contacto</a></li>-->
+        </li>
+        <li class="nav-menu-item nav-link"><a href="#" class="nav-menu-link">Simbolo</a></li>
+        <li class="nav-menu-item nav-link"><a href="#" class="nav-menu-link">Curiosidades</a></li>
+        <li class="nav-menu-item nav-link"><a href="#" class="nav-menu-link">contacto</a></li>
       </ul>
+
     </nav>
   </header>
 
@@ -41,18 +52,45 @@
     <div class="hero-content">
       <h2>Tierra de chandé y tradición cultural</h2>
       <p>Un lugar donde la música, la naturaleza y la calidez de su gente te esperan</p>
-      <button>Explora nuestra cultura</button>
-      <p class="fundado">Fundado en 1778, este municipio es cuna de música, tradición y hospitalidad.</p>
+
+      <!-- Flecha animada -->
+      <a href="#seccion-inferior" class="flecha"></a>
+    </div>
+  </section>
+  
+  <section class="esencia" id="seccion-inferior">
+    <div class="esencia-container">
+      <div class="esencia-texto">
+        <h2>🪘Nuestra esencia</h2>
+        <p>
+          San Sebastián de Buenavista, ubicado en el sur del Magdalena, en plena Depresión Momposina,
+          es un municipio ribereño donde se entrelazan naturaleza, cultura y tradición. Con cerca de
+          22.600 habitantes, es reconocida como “La Tierra del Chandé”, por su música autóctona,
+          su espíritu alegre y la profunda identidad cultural de su gente.
+        </p>
+      </div>
+      
+      <div class="esencia-contenido">
+        <img src="imagnes/iglesia 1.1.jpg" alt="Iglesia San Sebastián de Buenavista">
+        <div class="esencia-texto-2">
+          <p>
+            Fundado en 1748, San Sebastián de Buenavista guarda las huellas de los pueblos Chimilas
+            y del legado español.
+            <br><br>
+            Nació entre el río y la ciénaga, y creció al ritmo de los tambores, las cosechas y la fe
+            en San Sebastián Mártir.
+            <br><br>
+            Hoy, sigue siendo un símbolo de historia viva en la Depresión Momposina.
+          </p>
+          <a href="#historia" class="btn-historia">📖 Conoce nuestra historia</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- PIE DE PÁGINA -->
-  <!-- 
-  <footer>
-    Fundado en 1778, este municipio es cuna de música, tradición y hospitalidad.
-  </footer> -->
 
-  <!-- Script externo -->
-  <script src="script.js"></script>
+  <!-- Librería Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+ 
 </body>
 </html>
